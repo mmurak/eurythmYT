@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Eurythm YT</title>
+		<link rel="shortcut icon" href="./kiwi-bird.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<link href="./style.css" rel="stylesheet" type="text/css">
+		<style>
+		</style>
+	</head>
+	<body>
+		<header id="HEAD">
+			<div style="margin: 5px;">
+				<input type="button" id="InputIdButton" value="URL / ID"/>
+				<span id="IdArea"></span>
+			</div>
+		</header>
+		<div id="WholeBodySection">
+			<div id="LeftSection">
+				<div style="width: 100%;text-align:center;">
+					<span id="MonitorArea" >00:00.0 / 00:00.0</span>
+				</div>
+				<div id="VideoContainer">
+					<div id="OuterFrame" style="position:relative;">
+						<div id="Player"></div>
+						<canvas id="Mask"></canvas>
+					</div>
+					<div id="Video-controls" class="Controls">
+						<div class="Progress">
+							<progress id="Progress" value="0" min="0" max="">
+								<span id="Progress-bar"></span>
+							</progress>
+						</div>
+					</div>
+					<div style="padding: 5px;">
+						<label>Speed: </label>
+						<select id="SpeedControl">
+							<option value="1">1</option>
+						</select>
+						<input type="button" id="SpeedResetButton" value="1x Speed"></input>
+					</div>
+					<div style="display:flex; justify-content: space-between;margin: 5px 0 5px 0;">
+						<input type="button" id="LeftArrowButton" class="OpButton" value="&#x25C0;(REW)" />
+						<select id="JumpSelector" class="OpButton">
+							<option value="0.5">0.5 sec.</option>
+							<option value="1.0">1.0 sec.</option>
+							<option value="1.5">1.5 sec.</option>
+							<option value="2.0">2.0 sec.</option>
+							<option value="2.5">2.5 sec.</option>
+							<option value="3.0" selected>3.0 sec.</option>
+							<option value="3.5">3.5 sec.</option>
+							<option value="4.0">4.0 sec.</option>
+							<option value="4.5">4.5 sec.</option>
+							<option value="5.0">5.0 sec.</option>
+						</select>
+						<input type="button" id="RightArrowButton" class="OpButton" value="&#x25B6;(FF)" />
+					</div>
+					<div>
+						<label>Font size:
+						<input list="fontsize" id="FontSize" value="20"/></label>
+						<datalist id="fontsize">
+							<option value="14">
+							<option value="16">
+							<option value="18">
+							<option value="20">
+							<option value="22">
+							<option value="24">
+							<option value="26">
+							<option value="28">
+						</datalist>
+					</div>
+				</div>
+			</div>
+
+			<div id="RightSection">
+				<div>
+					<button id="PlayPauseButton" class="noMovingButton">Tap to Play<br>00:00.0 →</button>
+					<button id="PressPlayButton" class="noMovingButton">Press to Play<br>00:00.0 → 00:00.0</button>
+				</div>
+				<div style="margin: 5px 0 0 0;">
+					<input type="button" class="pcontrols" id="AButton"  value="A" />
+					<input type="button" class="pcontrols" id="BButton"  value="B" />
+					<label>Loop:<input type="checkbox" id="LoopCheckBox" checked/></label>
+					<input type="button" class="pcontrols" id="OneTouchButton"  value="One-touch AB" />
+				</div>
+				<div id="wholeArea">
+					<table id="dataArea">
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="Modal" id="DescDialog">
+			<div class="Modal-content">
+				<textarea id="DescArea" style="width: 100%; height: 20em; resize:none;">
+				</textarea>
+				<input type="button" id="DescOkButton" value="OK"></input>
+			</div>
+		</div>
+
+		<script src="./scripts/FieldEnabler.js"></script>
+		<script src="./scripts/ParameterManager.js"></script>
+		<script src="./scripts/TimeMarkerManager.js"></script>
+		<script src="./scripts/YouTubeNote.js"></script>
+	</body>
+</html>

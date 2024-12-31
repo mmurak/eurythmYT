@@ -1,0 +1,156 @@
+body {
+	font-family:"Lucida Grande","Lucida Sans Unicode","DejaVu Sans",Lucida,Arial,Helvetica,sans-serif;
+	width: 100%;
+	height: 100%;
+}
+header {
+	position: sticky;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+#WholeBodySection{
+	display: table;
+	table-layout: auto;
+	width: 100%;
+}
+#LeftSection{
+	padding: 5px;
+	display: table-cell;
+	vertical-align: top;
+	width: 20%;
+	max-width: 640px;
+}
+#RightSection{
+	padding: 25px;
+	display: table-cell;
+	margin-right: auto;
+	width: auto;
+	height: 100%;
+}
+#Player{
+	position:absolute;
+	z-index: 100;
+}
+#Mask{
+	position: relative;
+	left: 5;
+	margin: 0;
+	background-color: gray;
+	z-index: 200;
+	opacity: 0.2;
+}
+
+#SpeedControl{
+	width: 50px;
+}
+
+/* controls */
+.Controls > * {
+//	float:left;
+	height:100%;
+	height: 20px;
+//	margin-left:0.1953125%;
+	display:block;
+}
+
+.Controls {
+	cursor:pointer;
+}
+
+.Controls Progress {
+	display:block;
+	height:81%;
+	margin-top:2px;
+	margin-top:0.125rem;
+	border:none;
+	overflow:hidden;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	color:#0095dd;
+}
+
+.Modal {
+	display: none;
+	position: fixed;
+	z-index: 500;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.5);
+}
+.Modal-content {
+	background-color: #e0e0e0;
+	margin: 20% auto;
+	width: 60%;
+	padding: 2em;
+	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+	animation-name: modalopen;
+	animation-duration: 0.5s;
+}
+.noMovingButton{
+	vertical-align: top;
+	margin: 1px;
+	min-width: 100px;
+	width: 10%;
+	display: inline-block;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 3px;
+  -webkit-appearance: none;
+}
+
+.noMovingButton:hover{
+	filter:brightness(1.2);
+	cursor: pointer;
+}
+
+.noMovingButton:disabled  {
+	color: dimGrey;
+	box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.2);
+	border-bottom: none;
+	filter:brightness(1.0);
+	cursor: not-allowed;
+}
+
+#PressPlayButton{
+	background: #315ec0;
+	color: #fff;
+	width: 40%;
+	height: 3.5em;
+}
+
+#PressPlayButton:active{
+	background: red;
+}
+
+#PressPlayButton:disabled{
+	background: #224083;
+}
+
+#PlayPauseButton{
+	background: #33845d;
+	color: #fff;
+	width: 40%;
+	height: 3.5em;
+}
+
+#PlayPlayButton:active{
+	background: red;
+}
+#PlayPauseButton:disabled{
+	background: #1e4d36;
+}
+
+.OpButton{
+	height: 30px;
+	width: 30%;
+	text-align: center;
+}
+
+#FontSize{
+	width: 60px;
+}
